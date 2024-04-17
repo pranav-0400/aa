@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Tasks</title>
+</head>
+<body>
+    <h1>Your Tasks</h1>
+    <a href="{% url 'home' %}">Home</a> 
+
+    <ul>
+        {% for task in kata %}
+            <li>{{ task.kia }} <a href="{% url 'delete_task' task.pk %}">Delete</a> <a href="{% url 'edit_task' task.pk %}">Edit </a></li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Entry Form </title>
+</head>
+<body>
+    <h1>Task Entry Form: Lets Make your do to list</h1>
+    <form action="{% url 'task_detail' %}" method="POST">  <!-- Use URL template tag -->
+        {% csrf_token %}
+        <label for="task">Task:</label>
+        <input type="text" id="tasks" name="tasks" required>  <!-- Corrected input name -->
+        <br>
+        <input type="submit" value="Add Task">
+    </form>
+</body>
+</html>
